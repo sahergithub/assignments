@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <style>
+  .first-parent{
+    width:65%;
+    margin: auto;
+    justify-content: space-between;
+  }
+  #first-gen{
+   text-align: center;
+   margin-bottom: 50px;
+  }
+  .child{
+    width:50%;
+    box-shadow: rgba(216, 182, 182, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    justify-content: space-between;
+    border-radius: 20px;
+  }
+  img{
+    width: 100%
+  }
+  #small{
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  button{
+    background-color: red;
+    color: white;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 32PX;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: 14px;
+  }
+  .semi-parent{
+    display: flex;
+    justify-content: space-around;
+    column-gap: 50px;
+  }
+ </style>
+</head>
+<body>
+ <div class="first-parent">
+  <div id="first-gen">
+   <h1>Our Courses</h1>
+   <h4>Practice-Based Learning Tracks, <span style="color: red;">Supercharged By A.I.</span></h4>
+ </div>
+ <div class="semi-parent">
+  <div class="child">
+      <img src="https://www.masaischool.com/images/new-homepage/software-course-card.svg" alt="">
+      <div id="small">
+       <h2>Software Devlopment</h2>
+       <h4>Become job-ready in 30-35 weeks.</h4>
+       <hr>
+       <h5><input type="checkbox"> Opportunities : Full Stack Developer, Backend Developer, Software Engineer & much more.</h5>
+       <h5><input type="checkbox">100% live learning with expert instructors.</h5>
+       <h5><input type="checkbox">Pay After Placement</h5>
+       <button>VIEW DETAILS</button>
+      </div>
+  </div>
+  <div class="child">
+    <img src=https://www.masaischool.com/images/new-homepage/data-analytics-card.svg alt="">
+    <div id="small">
+     <h2>Data Analytics</h2>
+     <h4>Become job-ready in 30 weeks.</h4>
+     
+     <hr>
+     <h5><input type="checkbox">Opportunities : Data Engineer, Data Analyst, Machine Learning Engineer & much more.</h5>
+     <h5><input type="checkbox">Learn from expert instructors and hands-on assignments</h5>
+     <h5><input type="checkbox">Pay After Placement</h5>
+     <button>VIEW DETAILS</button>
+    </div>
+ </div>
+</div>
+</div>
+</body>
+</html>

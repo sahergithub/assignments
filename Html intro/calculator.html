@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Calculator</title>
+ <style>
+  h1{
+   text-align: center;
+   color: teal;
+   margin-bottom: 20px;
+  }
+  #parent{
+   width: 280px;
+   height: 370px;
+   margin: auto;
+   box-shadow: rgba(118, 106, 106, 0.16) 0px 10px 36px 0px, rgba(143, 136, 136, 0.06) 0px 0px 0px 1px;
+  }
+  .inp{
+   border-radius: 5px;
+   width: 85%;
+   height: 30px;
+   margin-left: 15px;
+   padding-top: 10px;
+   margin-top: 22px;
+   box-shadow: rgba(223, 214, 214, 0.16) 0px 10px 36px 0px, rgba(234, 226, 226, 0.06) 0px 0px 0px 1px;
+  }
+  .child{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   margin-left: 10px;
+   padding-left: 10px;
+  }
+  .child >div{
+   border-radius: 5px;
+   width: 30%;
+   height: 20px;
+   margin-top: 10px;
+   padding: 15px; 
+   box-shadow: rgba(212, 224, 234, 0.48) 6px 2px 16px 0px, rgba(201, 195, 195, 0.8) -6px -2px 16px 0px;
+  }
+  .mini{
+   background-color: black;
+   color: white;
+  }
+ </style>
+</head>
+<body>
+  <h1>Masai Calculator</h1>
+  <div id="parent">
+    <input type="text" class="inp">
+    <div class="child">
+     <div>1</div>
+     <div>2</div>
+     <div>3</div>
+     <div class="mini">+</div>
+     <div>4</div>
+     <div>5</div>
+     <div>6</div>
+     <div class="mini">-</div>
+     <div>7</div>
+     <div>8</div>
+     <div>9</div>
+     <div class="mini">x</div>
+     <div style="background-color: red; color: white;">C</div>
+     <div>0</div>
+     <div class="mini">=</div>
+     <div class="mini">/</div>
+    </div> 
+  </div>
+</body>
+</html>

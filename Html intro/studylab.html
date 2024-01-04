@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Studylab</title>
+ <style>
+  #parent{
+   /* border: 1px solid black; */
+   width: 85%;
+   height: 50px;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+   box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45);
+  }
+  #parent > div + div{
+   display: flex;
+   gap: 50px;
+   
+   }
+   div > h1{
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 40px;
+    padding-top: 5px;
+   }
+   .child{
+    width: 17%;
+    height: 49px;
+    margin-right: 25px;
+    /* border: 1px solid red; */
+    background-color: rgb(139, 139, 244);
+    color: white;
+   }
+   #parent > div:last-child{
+    /* border: 1px solid green; */
+    margin-right: 1px;
+   }
+   #second-parent{
+    width: 85%;
+    display: flex;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   }
+   .second-gen{
+    display: flex;
+    gap: 10px;
+   }
+   .second-gen >img{
+    width: 120px;
+    height: 80px;
+   }
+   #second-parent > div{
+    width: 50%;
+    /* border: 1px solid blue; */
+    padding: 20px;
+    margin-top: 10px;
+   }
+   .main{
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-gap: 10px;
+   }
+   .main > div >img{
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+   }
+   .small{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   }
+ </style>
+</head>
+<body>
+   <div id="parent">
+      <div class="child">
+        <h1>Studylab</h1>
+      </div>
+      <div>
+       <h4 style="color: blue;">Home</h4>
+       <h4>About</h4>
+       <h4>Course</h4>
+       <h4>Instructor</h4>
+       <h4>Blog</h4>
+       <h4>Content</h4>
+      </div>
+   </div>
+   <div id="second-parent">
+     <div>
+      <h4 style="color: rgb(82, 82, 223);">WELCOME TO STUDY LAB</h4>
+      <h2>We Are Study Lab An Online learning Center</h2>
+      <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+     <div class="second-gen">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2eU7EXQDuFdbAZYLpzcol22IAPu5ePjY6mw&usqp=CAU" alt="">
+       <h4>Learn anything from StudyLab, Watch video</h4>
+     </div>
+    </div>
+    <div class="main">
+        <div class="small">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVIkeiwbu6hn5zP31DgzDZ0VnJhRf6jYyC8A&usqp=CAU" alt="">
+         <h4>Top Quality Content</h4>
+         <p>A small river named Duden flows by their place and supplies</p>
+        </div>
+        <div class="small">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA0YB_jgHsL7kzjy-UC671cOfQq4RcZAZJqA&usqp=CAU" alt="">
+         <h4>Highly Skilled Instructor</h4>
+         <p>A small river named Duden flows by their place and supplies</p>
+        </div>
+        <div class="small">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToRooEkgUSA8K9EFYl5j7SbTmV_78crkCpZA&usqp=CAU" alt="">
+         <h4>World Class & Quiz</h4>
+         <p>A small river named Duden flows by their place and supplies</p>
+        </div>
+        <div class="small">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiAvd2lSst2yi1fvBeCltKLQVXa6U2zauOQ&usqp=CAU" alt="">
+         <h4>Get Certified</h4>
+         <p>A small river named Duden flows by their place and supplies</p>
+        </div>
+      </div>
+   </div>
+  </body>
+</html>

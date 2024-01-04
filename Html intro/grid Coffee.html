@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Media Quiery</title>
+ <style>
+  #parent{
+   width: 80%;
+   margin: auto;
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-gap: 20px;
+   margin-top: 10px;
+  }
+  #parent > div{
+   /* border: 1px solid red; */
+   padding: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  #parent > div > div{
+   display: flex;
+   justify-content: space-between;
+  }
+  #parent > div >p{
+   font-family: 'Times New Roman', Times, serif;
+  }
+  @media screen and (max-width: 400px){
+   #parent{
+   width: 80%;
+   margin: auto;
+   display: grid;
+   grid-template-columns: repeat(1,1fr);
+   grid-gap: 20px;
+   margin-top: 10px;
+  }
+  #parent > div{
+   /* border: 1px solid red; */
+   padding: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  #parent > div > div{ 
+   display: flex;
+   justify-content: space-between;
+  }
+  }
+  @media screen and (min-width: 401px) and ( max-width: 800px){                                                   
+   #parent{
+   width: 80%;
+   margin: auto;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   grid-gap: 20px;
+   margin-top: 10px;
+  }
+  #parent > div{
+   /* border: 1px solid red; */
+   padding: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  #parent > div > div{ 
+   display: flex;
+   justify-content: space-between;
+  }
+ }
+ </style>
+</head>
+<body>
+ <div id="parent">
+   <div>
+     <div>
+       <h2>Cappuccino</h2>
+       <p style="color: rgb(223, 101, 56);">$49</p>
+     </div>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime, corrupti nostrum</p>
+   </div>
+   <div>
+    <div>
+      <h2>Americano</h2>
+      <p style="color: rgb(223, 89, 40);">$49</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime, corrupti nostrum</p>
+  </div>
+  <div>
+   <div>
+     <h2>Espresso</h2>
+     <p style="color: rgb(223, 89, 40);">$49</p>
+   </div>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime, corrupti nostrum</p>
+ </div>
+ <div>
+  <div>
+    <h2>Macchiato</h2>
+    <p style="color: rgb(210, 92, 50);">$49</p>
+  </div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime, corrupti nostrum</p>
+</div>
+<div>
+ <div>
+   <h2>Mocha</h2>
+   <p style="color: rgb(193, 94, 58);">$49</p>
+ </div>
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime, corrupti nostrum</p>
+</div>
+<div>
+ <div>
+   <h2>Coffee Latte</h2>
+   <p style="color: rgb(191, 84, 45);">$49</p>
+ </div>
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime, corrupti nostrum</p>
+</div>
+<div>
+ <div>
+   <h2>Piccolo Latte</h2>
+   <p style="color: rgb(210, 92, 49);">$49</p>
+ </div>
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime, corrupti nostrum</p>
+</div>
+<div>
+ <div>
+   <h2>Risretto</h2>
+   <p style="color: rgb(207, 91, 48);">$49</p>
+ </div>
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime, corrupti nostrum</p>
+</div>
+<div>
+ <div>
+   <h2>Affogato</h2>
+   <p style="color: rgb(197, 95, 58);">$49</p>
+ </div>
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime, corrupti nostrum</p>
+</div>
+ </div>
+</body>
+</html>
