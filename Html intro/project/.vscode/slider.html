@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Image_slider</title>
+ <style>
+  body{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background-color: aquamarine;
+  }
+  .slider{
+   width: 50%;
+   margin: 50px auto;
+  }
+
+  .image-box img{
+   width: 100%;
+  }
+
+  .btn{
+   border: none;
+   outline: none;
+   background:lightblue;
+   padding: 10px 20px;
+   font-size: 20px;
+   color: rgb(177, 52, 52);
+   cursor: pointer;
+   margin: 10px auto;
+   width: 70px;
+   display: block;
+   /* flex-direction: column; */
+  }
+
+  .btn:hover{
+   background-color: black;
+   color: white;
+  }
+ </style>
+</head>
+<body>
+ <div class="slider">
+  <div class="image-box">
+   <img src="https://www.bestblooms.co.nz/blog_images/large/autumn_flowers_nz_bestblooms.jpg" alt="" class="slider-img">
+   <img src="https://imgs2.photo4me.com/thumbnails/8394/854226_t.jpeg" alt="" class="slider-img">
+   <img src="https://www.bhg.com/thmb/DwWTe7YrVLa2vyshJxqIOriyDlM=/600x0/filters:no_upscale():strip_icc()/RosaEasyEleganceSunriseSunset-06-3294-1-t-m-8bb58ab6a7a445b3a3f123bf793159de.jpg" alt="" class="slider-img">
+   <img src="https://st4.depositphotos.com/12085526/28103/i/450/depositphotos_281030528-stock-photo-beautiful-yellow-flower-black-background.jpg" alt="" class="slider-img">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHDF1F52SvOF90IvYN55hLv2BymvfMP7JZTA&usqp=CAU" alt="" class="slider-img">
+   <img src="https://static.vecteezy.com/system/resources/thumbnails/030/631/393/small_2x/a-tunnel-with-a-flower-garden-in-the-background-free-photo.jpg" alt="" class="slider-img">
+   <img src="https://st5.depositphotos.com/26564472/63478/i/450/depositphotos_634786390-stock-photo-beautiful-secret-fairytale-garden-flower.jpg" alt="" class="slider-img">
+   <img src="https://s1.1zoom.me/prev/595/Closeup_Cosmos_plant_Bokeh_White_594967_600x400.jpg" alt="" class="slider-img">
+   <img src="https://www.highlandtitles.com/wp-content/uploads/2023/08/Mountain-View-600-x-400-px.jpg" alt="" class="slider-img">
+   <img src="https://i.pinimg.com/736x/04/f1/1e/04f11ec1915ab0003e345ba1570b27a9.jpg" alt="" class="slider-img">
+   <img src="https://i.pinimg.com/736x/38/53/d1/3853d172e5f177fd6f46e9c8853dc9bf.jpg" alt="" class="slider-img">
+   <img src="https://cdn.wallpapersafari.com/27/18/6tIX97.png" alt="" class="slider-img">
+   <img src="https://static.vecteezy.com/system/resources/thumbnails/022/448/145/small_2x/earth-day-environment-day-nature-green-ai-generative-glossy-background-images-tree-and-water-free-photo.jpg" alt="" class="slider-img">
+   <img src="https://www.shutterstock.com/image-photo/canyon-view-summer-colorful-landscape-600nw-2148937449.jpg" alt="" class="slider-img">
+   <img src="https://www.remotelands.com/travelogues/app/uploads/2023/11/Essential-Nikko-1-600x400.jpg" alt="" class="slider-img">
+   <img src="https://academy.allaboutbirds.org/wp-content/uploads/2024/01/3x2-Black-cheeked-Woodpecker_Alexander-Montero_Costa-Rica_488840201-600x400.jpeg" alt="" class="slider-img">
+   <img src="https://static01.nyt.com/images/2023/08/13/realestate/09garden01/oakImage-1691507985138-articleLarge.jpg?quality=75&auto=webp&disable=upscale" alt="" class="slider-img">
+   <img src="https://onetreeplanted.org/cdn/shop/articles/ipe-amarelo-amazing-tree_600x.jpg?v=1624920644" alt="" class="slider-img">
+   <img src="https://images.ctfassets.net/hrltx12pl8hq/5CUZGV5rIbze8h8I0S2Xp0/37e5e0ef49034cd64696a7f972dc5ba2/flowers-images.jpg?fit=fill&w=600&h=400" alt="" class="slider-img">
+   <img src="https://st3.depositphotos.com/8638032/36536/i/450/depositphotos_365361688-stock-photo-delicate-chamomile-flowers-close-floral.jpg" alt="" class="slider-img">
+  </div>
+
+  <div class="btn" onclick="prev()">Prev</div>
+  <div class="btn" onclick="next()">Next</div>
+ </div>
+
+ <script>
+  var slider_image = document.querySelector('.slider-img');
+  var images = [
+  "https://www.bestblooms.co.nz/blog_images/large/autumn_flowers_nz_bestblooms.jpg",
+  "https://imgs2.photo4me.com/thumbnails/8394/854226_t.jpeg",
+  "https://www.bhg.com/thmb/DwWTe7YrVLa2vyshJxqIOriyDlM=/600x0/filters:no_upscale():strip_icc()/RosaEasyEleganceSunriseSunset-06-3294-1-t-m-8bb58ab6a7a445b3a3f123bf793159de.jpg",
+  "https://st4.depositphotos.com/12085526/28103/i/450/depositphotos_281030528-stock-photo-beautiful-yellow-flower-black-background.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHDF1F52SvOF90IvYN55hLv2BymvfMP7JZTA&usqp=CAU",
+  "https://static.vecteezy.com/system/resources/thumbnails/030/631/393/small_2x/a-tunnel-with-a-flower-garden-in-the-background-free-photo.jpg",
+  "https://st5.depositphotos.com/26564472/63478/i/450/depositphotos_634786390-stock-photo-beautiful-secret-fairytale-garden-flower.jpg",
+  "https://s1.1zoom.me/prev/595/Closeup_Cosmos_plant_Bokeh_White_594967_600x400.jpg",
+  "https://www.highlandtitles.com/wp-content/uploads/2023/08/Mountain-View-600-x-400-px.jpg",
+  "https://i.pinimg.com/736x/04/f1/1e/04f11ec1915ab0003e345ba1570b27a9.jpg",
+  "https://i.pinimg.com/736x/38/53/d1/3853d172e5f177fd6f46e9c8853dc9bf.jpg",
+  "https://cdn.wallpapersafari.com/27/18/6tIX97.png",
+  "https://static.vecteezy.com/system/resources/thumbnails/022/448/145/small_2x/earth-day-environment-day-nature-green-ai-generative-glossy-background-images-tree-and-water-free-photo.jpg",
+  "https://www.shutterstock.com/image-photo/canyon-view-summer-colorful-landscape-600nw-2148937449.jpg",
+  "https://www.remotelands.com/travelogues/app/uploads/2023/11/Essential-Nikko-1-600x400.jpg",
+  "https://academy.allaboutbirds.org/wp-content/uploads/2024/01/3x2-Black-cheeked-Woodpecker_Alexander-Montero_Costa-Rica_488840201-600x400.jpeg",
+  "https://static01.nyt.com/images/2023/08/13/realestate/09garden01/oakImage-1691507985138-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+  "https://onetreeplanted.org/cdn/shop/articles/ipe-amarelo-amazing-tree_600x.jpg?v=1624920644",
+  "https://images.ctfassets.net/hrltx12pl8hq/5CUZGV5rIbze8h8I0S2Xp0/37e5e0ef49034cd64696a7f972dc5ba2/flowers-images.jpg?fit=fill&w=600&h=400",
+  "https://st3.depositphotos.com/8638032/36536/i/450/depositphotos_365361688-stock-photo-delicate-chamomile-flowers-close-floral.jpg",
+  ];
+
+  var i = 0;
+
+  function prev(){
+   if(i <= 0) i = images.length;
+   i--;
+   return setImage()
+  }
+
+  function next(){
+   if(i >= images.length - 1) i = -1;
+   i++;
+   return setImage()
+  }
+
+  // function setImage(){
+  //  return slider_image.setAttribute('src', images[i]);
+  // }
+  function setImage(){
+   slider_image.src = images[i];
+  }
+ </script>
+</body>
+</html>

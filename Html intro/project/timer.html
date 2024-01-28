@@ -15,15 +15,17 @@
     flex-direction: column;
   }
   .stopwatch{
-    background-color: blue;
+    background-color: rgb(107, 107, 217);
     padding: 20px 24px;
     border-radius: 10px;
     font-size: 50px;
     font-weight: 600;
   }
   #buttons{
-    margin-top: 20px;
-    padding: 12px 24px;
+    border: none;
+    outline: none;
+    margin-top: 30px;
+    padding: 30px 30px;
     background-color: burlywood;
     margin-inline: 12px;
     border-radius: 8px;
@@ -42,12 +44,11 @@
 </body>
 <script>
  let timer;
-//  let minuts = 0;
  let seconds = 0;
 
  function start(){
    timer = setInterval(()=>{
-   seconds++
+   seconds++;
    stopwatch();
    }, 1000)
   }
