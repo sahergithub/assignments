@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #timer {
+            margin-top: 10px;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #timer:hover{
+            text-shadow: 2px 4px 7px black;
+            color: brown;
+        }
+        input {
+            width: 50px;
+            margin: 0 5px;
+            text-align: center;
+        }
+        label{
+            text-shadow: 2px 4px 8px rgb(150, 177, 41);
+            color: red;
+        }
+        label:hover{
+            text-shadow: 2px 4px 8px  red;
+            color: rgb(57, 70, 214);
+        }
+        #buttons {
+            margin-top: 20px;
+        }
+        button{
+            border-radius: 5px;
+            background-color: rgba(0, 255, 255, 0.094);
+        }
+        button:hover{
+            box-shadow: 2px 1px rgb(31, 189, 187);
+        }
+        #timer-indicator {
+            font-size: 1.2em;
+            color: rgb(202, 92, 165);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="hours">Hours:</label>
+        <input type="number" id="hours" min="0" value="0">
+        <label for="minutes">Minutes:</label>
+        <input type="number" id="minutes" min="0" value="0">
+        <label for="seconds">Seconds:</label>
+        <input type="number" id="seconds" min="0" value="0">
+    </div>
+    <div id="timer">00:00:00</div>
+    <div id="timer-indicator"></div>
+    <div id="buttons">
+        <button onclick="toggleTimer()">Start/Stop</button>
+        <button onclick="resetTimer()">Reset</button>
+    </div>
+    <script>
+        let timerInterval;
+        let isTimerRunning = false;
+        let hoursInput = document.getElementById('hours');
+        let minutesInput = document.getElementById('minutes');
+        let secondsInput = document.getElementById('seconds');
+        let hours, minutes, seconds;
+        function toggleTimer() {
+            if (isTimerRunning) {
+                pauseTimer();
+            } else {
+                startTimer();
+            }
+        }
+        function startTimer() {
+            if (!timerInterval) {
+                hours = parseInt(hoursInput.value) || 0;
+                minutes = parseInt(minutesInput.value) || 0;
+                seconds = parseInt(secondsInput.value) || 0;
+                timerInterval = setInterval(updateTimer, 1000);
+                isTimerRunning = true;
+                document.getElementById('timer-indicator').textContent = 'Timer is running';
+                document.getElementById('timer-indicator').style.color = 'green';
+            }
+        }
+        function pauseTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            isTimerRunning = false;
+            document.getElementById('timer-indicator').textContent = 'Timer is paused';
+            document.getElementById('timer-indicator').style.color = 'red';
+        }
+        function resetTimer() {
+            pauseTimer();
+            hoursInput.value = '0';
+            minutesInput.value = '0';
+            secondsInput.value = '0';
+            updateTimerDisplay();
+            document.getElementById('timer-indicator').textContent = '';
+            document.getElementById('timer-indicator').style.color = 'initial';
+        }
+        function updateTimer() {
+            if (hours === 0 && minutes === 0 && seconds === 0) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                isTimerRunning = false;
+                document.getElementById('timer-indicator').textContent = 'Timer has finished';
+                document.getElementById('timer-indicator').style.color = 'blue';
+                return;
+            }
+            if (seconds > 0) {
+                seconds--;
+            } else {
+                if (minutes > 0) {
+                    minutes--;
+                    seconds = 59;
+                } else {
+                    if (hours > 0) {
+                        hours--;
+                        minutes = 59;
+                        seconds = 59;
+                    }
+                }
+            }
+            updateTimerDisplay();
+        }
+        function updateTimerDisplay() {
+            const formattedHours = padZero(hours);
+            const formattedMinutes = padZero(minutes);
+            const formattedSeconds = padZero(seconds);
+            document.getElementById('timer').textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+        }
+        function padZero(value) {
+            return value < 10 ? '0' + value : value;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
